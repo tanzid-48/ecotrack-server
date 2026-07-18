@@ -14,6 +14,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Render (and similar hosts) terminate TLS at a proxy in front of the app.
+// Without this, Express can't tell the connection is HTTPS, which breaks
+// Secure/SameSite=None cookies needed for cross-domain OAuth.
+app.set("trust proxy", 1);
+
 app.use(
   cors({
     origin: process.env.CLIENT_URL || "http://localhost:3000",

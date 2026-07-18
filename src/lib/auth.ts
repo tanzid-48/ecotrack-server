@@ -34,6 +34,9 @@ export function createAuth() {
         sameSite: "none",
         secure: true,
       },
+      ipAddress: {
+        ipAddressHeaders: ["x-forwarded-for"],
+      },
     },
     plugins: [bearer()],
   });
