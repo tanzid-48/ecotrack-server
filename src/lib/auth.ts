@@ -23,6 +23,9 @@ export function createAuth() {
         clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
       },
     },
+    account: {
+      skipStateCookieCheck: true,
+    },
     advanced: {
       crossSubDomainCookies: {
         enabled: false,
@@ -30,7 +33,6 @@ export function createAuth() {
       defaultCookieAttributes: {
         sameSite: "none",
         secure: true,
-        partitioned: true,
       },
     },
     plugins: [bearer()],
