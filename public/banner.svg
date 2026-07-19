@@ -1,0 +1,34 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a4f44"/>
+      <stop offset="100%" stop-color="#0f6d5f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#bg)"/>
+
+  <!-- Decorative concentric rings (echoing the hero illustration) -->
+  <circle cx="1020" cy="150" r="130" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="22"/>
+  <circle cx="1020" cy="150" r="95" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="20"/>
+  <circle cx="1020" cy="150" r="60" fill="none" stroke="#f0a24d" stroke-opacity="0.9" stroke-width="3" stroke-dasharray="4 6"/>
+  <circle cx="1020" cy="150" r="18" fill="#f0a24d"/>
+
+  <!-- Logo mark -->
+  <circle cx="95" cy="120" r="34" fill="#2fa793"/>
+  <path d="M83 128c0-16 13-27 28-27 2 8-2 16-8 20-4 3-9 4-14 4-2 0-4 1-6 3z" fill="#ffffff"/>
+  <path d="M83 128c6-10 16-16 27-17" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <text x="150" y="132" font-family="Georgia, serif" font-size="48" font-weight="600" fill="#ffffff">EcoTrack</text>
+
+  <text x="95" y="185" font-family="Arial, sans-serif" font-size="20" fill="#cfe8e2">
+    Track your carbon footprint. Get AI-powered insights.
+  </text>
+  <text x="95" y="215" font-family="Arial, sans-serif" font-size="20" fill="#cfe8e2">
+    Join a community building sustainable habits.
+  </text>
+
+  <text x="95" y="255" font-family="Arial, sans-serif" font-size="14" fill="#8fc9bd">
+    Next.js · Express · MongoDB · Groq AI
+  </text>
+</svg>
