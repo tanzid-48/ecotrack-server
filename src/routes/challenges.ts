@@ -220,4 +220,39 @@ router.post(
   }
 );
 
+// GET /api/challenges/joined/list — challenges the logged-in user has joined
+router.get(
+  "/joined/list",
+  requireAuth,
+  async (req: AuthRequest, res: Response) => {
+    try {
+      const db = getDB();
+      const participations = await db
+        .collection("challengeParticipations")
+        .find({ userId: req.userId })
+        .sort({ joinedAt: -1 })
+        .toArray();
+
+      const ids = participations
+        .map((p) => {
+          try {
+            return new ObjectId(p.challengeId);
+          } catch {
+            return null;
+          }
+        })
+        .filter((id): id is ObjectId => id !== null);
+
+      const items = ids.length
+        ? await db.collection("challenges").find({ _id: { $in: ids } }).toArray()
+        : [];
+
+      res.json(items);
+    } catch (err) {
+      console.error("Error fetching joined challenges:", err);
+      res.status(500).json({ error: "Failed to fetch joined challenges." });
+    }
+  }
+);
+
 export default router;
